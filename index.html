@@ -1,0 +1,20 @@
+var xPositions = [200, 300, 30, 10, 30, 50, 103, 205, 375, 30];
+var yPositions = [112, 2, 10, 199, 349, 160, 296, 194, 121, 300];
+draw = function ( ) {
+    background ( 204 , 247 , 255 ) ;
+    for(var i = 0; i < xPositions.length; i++)
+    {
+    noStroke();
+    fill(random(0, 500), random(0, 500), random(0, 500));
+    ellipse(xPositions[i], yPositions[i], 10, 10);
+    yPositions[i] += 5;
+    if(yPositions[i] > 405) {
+        yPositions[i] = 0;
+    }
+    }
+};
+
+mouseClicked = function  ( ) {
+    xPositions.push (mouseX);
+    yPositions.push (mouseY);
+};
